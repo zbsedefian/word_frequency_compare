@@ -1,5 +1,4 @@
 from string import punctuation
-import time
 
 
 def create_dict(f):
@@ -28,17 +27,10 @@ def most_frequent(s):
 def get_percentages(d):
     """Converts the frequency counted list to one with percentages.
     """
-    new = {}
     new_f = {}
-    total_chars = 0
-    for key in d:
-        total_chars += d[key]
     for key in d:
         val = d[key] / total_chars * 100
         new_f[key] = val
-        val = str(val)
-        val = val[:4] + "%"
-        new[key] = val
     return new_f
 
 
@@ -77,7 +69,6 @@ def get_data():
     return final_most_freq
 
 
-
 def main():
     print("This program analyzes a text file and returns the most frequent words found,")
     print("excluding the 1000 most common words in the English language.")
@@ -98,7 +89,6 @@ def main():
         for i in range(30):
             if fre1[i] in fre2 and fre1[i] in fre3:
                 print(fre1[i])
-
     elif books == 4:
         fre1 = get_data()
         fre2 = get_data()
@@ -108,7 +98,6 @@ def main():
         for i in range(30):
             if fre1[i] in fre2 and fre1[i] in fre3 and fre1[i] in fre4:
                 print(fre1[i])
-
     else:
         print("Invalid input.")
 
